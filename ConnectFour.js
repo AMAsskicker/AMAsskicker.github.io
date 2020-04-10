@@ -4,7 +4,7 @@
 // date: april 5, 2020
 //
 //javascript for connect four
-// adapted example from: 
+// adapted example from: nruffilo
 //
 
 
@@ -128,6 +128,7 @@ function isWinner() {
 				}//end if
 			}//end for col
 		}//end vertical
+		
 		console.log("checking player" + i + " diag down");
 		//check diagonal pointing down
 		for(row=0; row<3; row++){
@@ -142,10 +143,10 @@ function isWinner() {
 		}//end diagonal down
 		console.log("checking player" + i + " diag up");
 		//check diagonal pointing up
-		for (row=5; row>2; row--){
-			for (col=6; col>2; col--){
+		for (row=5; row>=2; row--){
+			for (col=0; col<7; col++){
 				if (gameBoard[row][col] == i){
-					if (gameBoard[row-1][col-1]==i && gameBoard[row-2][col-2]==i && gameBoard[row-3][col-3]==i){
+					if (gameBoard[row-1][col+1]==i && gameBoard[row-2][col+2]==i && gameBoard[row-3][col+3]==i){
 						//if 4 in a row declare win
 						return true;
 					}//end if
