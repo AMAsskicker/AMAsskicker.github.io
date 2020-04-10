@@ -142,7 +142,7 @@ function isWinner() {
 		}//end diagonal down
 		console.log("checking player" + i + " diag up");
 		//check diagonal pointing up
-		for (row=5; row>2; row--){
+		for (row=5; row>1; row--){
 			for (col=6; col>2; col--){
 				if (gameBoard[row][col] == i){
 					if (gameBoard[row-1][col-1]==i && gameBoard[row-2][col-2]==i && gameBoard[row-3][col-3]==i){
