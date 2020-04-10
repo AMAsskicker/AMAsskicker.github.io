@@ -1,0 +1,68 @@
+<!-- index.html 
+	Created: march 23, 2020
+	By: Adam Abernathy
+	Edited: 
+
+	Description: 
+		html file to display & play connect 4 using javascript. 
+		
+		-->
+<!DOCTYPE HTML>
+<html>
+	<head> 
+		<link rel="stylesheet" href="connect4.css">
+		
+	</head>
+	
+	
+	<body onload="startGame()"> 
+		
+	<h1>CONNECT FOUR</h1>
+		<p>Number of Players: 2</p>
+		<p>Objective: Get 4 chits in a row up, down, diagonal up or down</p>
+		
+		<button id="startButton" onclick="startGame();">Start Game</button>
+		
+		<div id="gameArea">
+			<div id="gameInfo"></div>
+			<table id="gameArea">
+				<thead>
+					<tr> 
+						<td><button onclick="dropChit(0)">PLACE</button></td>
+						<td><button onclick="dropChit(1)">PLACE</button></td>
+						<td><button onclick="dropChit(2)">PLACE</button></td>
+						<td><button onclick="dropChit(3)">PLACE</button></td>
+						<td><button onclick="dropChit(4)">PLACE</button></td>
+						<td><button onclick="dropChit(5)">PLACE</button></td>
+						<td><button onclick="dropChit(6)">PLACE</button></td>
+					</tr>
+				</thead>
+				
+				<script>
+					//writed the board grid
+					for (var i=0; i<6; i++){
+						document.writeln("<tr>");
+						for (var j=0; j<7; j++){
+							document.writeln("<td id='array_" + i + "_" + j + "' class='boardSquare'></td>");
+						}
+						document.writeln("</tr>");
+					}
+				</script>
+<!--
+				<tr><td id="square-0-0" class="boardSquare"></td></tr>
+-->
+			</table>
+			<div id="gameStatus"></div>
+		</div>
+		
+	
+	</body>
+	
+	
+<script id="gameCode" type="text/javascript" src="ConnectFour.js"></script>
+</html>
+
+
+
+
+

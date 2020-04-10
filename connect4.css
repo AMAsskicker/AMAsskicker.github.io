@@ -1,0 +1,37 @@
+/*
+
+connect 4 style and colors
+
+modified css from: cite here
+
+*/
+
+
+.chit{
+	height: 38px;
+	width: 38px;
+	border-radius: 21px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.player0{
+	background-color: red;
+}
+
+.player1{
+	background-color: black;
+}
+
+.player2{
+	background-color: white;
+}
+
+.boardSquare{
+	border: 1px solid deepskyblue;
+	height: 40px;
+	width: 40px;
+	background-color: deepskyblue;
+	
+}
