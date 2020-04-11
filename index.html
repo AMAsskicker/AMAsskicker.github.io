@@ -6,14 +6,14 @@
 	Description: 
 		html file to display & play connect 4 using javascript. 
 		
-		-->
+-->
 <!DOCTYPE HTML>
 <html>
 	<head> 
 		<link rel="stylesheet" href="connect4.css">
 		<title>Connect Four</title>
+		<style>#gameArea {background-color: deepskyblue;}</style>
 	</head>
-	
 	
 	<body onload="startGame()"> 
 		
@@ -23,8 +23,9 @@
 		
 		<button id="startButton" onclick="startGame();">Start Game</button>
 		
-		<div id="gameArea">
+		<div id="gameAreaDiv">
 			<div id="gameInfo"></div>
+			
 			<table id="gameArea">
 				<thead>
 					<tr> 
@@ -39,7 +40,7 @@
 				</thead>
 				
 				<script>
-					//writed the board grid
+					//write the board grid
 					for (var i=0; i<6; i++){
 						document.writeln("<tr>");
 						for (var j=0; j<7; j++){
@@ -48,21 +49,10 @@
 						document.writeln("</tr>");
 					}
 				</script>
-<!--
-				<tr><td id="square-0-0" class="boardSquare"></td></tr>
--->
 			</table>
 			<div id="gameStatus"></div>
 		</div>
-		
-	
 	</body>
-	
-	
-<script id="gameCode" type="text/javascript" src="ConnectFour.js"></script>
+	<script id="gameCode" type="text/javascript" src="ConnectFour.js"></script>
 </html>
-
-
-
-
 

@@ -2,7 +2,9 @@
 //
 // connect 4 style and colors
 //
-// modified css from: nruffilo
+// By: Adam Abernathy 
+// Date: 
+// CSS inspired from: nruffilo
 //
 */
 
@@ -18,6 +20,7 @@
 
 .player0{
 	background-color: red;
+	color: red;
 }
 
 .player1{

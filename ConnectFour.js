@@ -4,7 +4,7 @@
 // date: april 5, 2020
 //
 //javascript for connect four
-// adapted example from: nruffilo
+// inspiration from: nruffilo
 //
 
 
@@ -29,37 +29,32 @@ function startGame() {
 	
 	//if no active game set running to active
 	gameRunning = true;
-	
-	
-	//zero board array, 2 dim array, player 2 is no move yet
+	//clear board array, 2 dim array, player 2 is no move yet
 	for (var row=0; row<6; row++){
 		gameBoard[row] = [];
 		for(var col=0; col<7; col++){
 			gameBoard[row][col] = 2;
-		}//end for
-		
-	}//end for
-	console.log("board cleared");
-	//create board
+		}//end for col
+	}//end for row
+	//display board
 	updateBoard();
-	console.log("board drawn");
 	//set p1 as current player
 	currentPlayer = 0;
 	//start players turn
 	startTurn();
 }//end startGame
 
+//updates the board on the screen after each move
+//sets the css for color change
 function updateBoard() {
-	console.log("checking for winner");
 	//check board for winner
 	if (isWinner()){
 		//end the game with text out and set variables
 		gameRunning = false;
+		//post winner
 		document.getElementById('gameInfo').innerHTML = "Winner Is: Player " + (currentPlayer+1);
 		isOver = true;
-		console.log("winner declared");
 	}
-	console.log("getting element");
 	//reassign the colors to each piece of the board
 	//through changing the css class (ie 0->red, 1->black, 2->white)
 	for (var col=0; col<7; col++){
@@ -77,7 +72,8 @@ function startTurn() {
 	}//end if
 }// end startTurn
 
-
+//drops the chit to the lowest spot it can
+//if game is over, doesnt drop chits
 function dropChit(columnNum) {
 	//if game is over, dont drop, else drop
 	if (!isOver){
@@ -101,9 +97,7 @@ function dropChit(columnNum) {
 //check for 4 in a row(up, down, diag up & down)
 function isWinner() {
 	//check each player
-	console.log("checking players");
 	for (var i=0; i<2; i++){
-		console.log("checking player" + i + " horizontal");
 		//check horizontal
 		for (var col=0; col<4; col++){
 			for (var row=0; row<6; row++){
@@ -117,7 +111,6 @@ function isWinner() {
 			}//end for row
 		}//end for horizontal
 		//check vertical
-		console.log("checking player" + i + " vertical");
 		for (row=0; row<3; row++){
 			for (col=0; col<7; col++){
 				if (gameBoard[row][col] == i){
@@ -128,8 +121,6 @@ function isWinner() {
 				}//end if
 			}//end for col
 		}//end vertical
-		
-		console.log("checking player" + i + " diag down");
 		//check diagonal pointing down
 		for(row=0; row<3; row++){
 			for(col=0; col<4; col++){
@@ -141,7 +132,6 @@ function isWinner() {
 				}//end if
 			}//end for col
 		}//end diagonal down
-		console.log("checking player" + i + " diag up");
 		//check diagonal pointing up
 		for (row=5; row>=2; row--){
 			for (col=0; col<7; col++){
